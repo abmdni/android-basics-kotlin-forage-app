@@ -17,6 +17,7 @@ package com.example.forage
 
 import android.app.Application
 import com.example.forage.data.ForageDatabase
+import com.example.forage.model.Forageable
 
 /**
  * An application class that inherits from [Application], allows for the creation of a singleton
@@ -25,4 +26,5 @@ import com.example.forage.data.ForageDatabase
 class BaseApplication : Application() {
 
     // TODO: provide a ForageDatabase value by lazy here
+    val database : ForageDatabase by lazy {ForageDatabase.getDatabase(this)}
 }
